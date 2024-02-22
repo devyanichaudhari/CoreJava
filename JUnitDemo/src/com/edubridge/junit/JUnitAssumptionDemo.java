@@ -15,4 +15,12 @@ class JUnitAssumptionDemo {
 		System.setProperty("Atul", "Atul");
 		Assumptions.assumeFalse("Atul".equals(System.getProperty("Atul")));
 	}
+	@Test
+	void testTwo()
+	{
+		int x=10,y=10;
+		Assumptions.assumingThat(x==y,() -> {
+		System.out.println();});
+		System.out.println("This method will not skip");
+	}
 }
