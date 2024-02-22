@@ -1,5 +1,4 @@
-package com.edubridge.junitdemo;
-
+package com.edubridge.junit;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
