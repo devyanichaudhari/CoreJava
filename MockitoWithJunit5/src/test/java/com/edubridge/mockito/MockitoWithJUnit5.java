@@ -1,15 +1,15 @@
-package com.edubridge.mockitodemo;
+package com.edubridge.mockito;
+import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.*;
-import org.mockito.Mockito;
-class MockitoWithJunitDemo {
-	/*Dependency Injection in the form of Objects*/
+
+class MockitoWithJUnit5 {
 	private Calculator cal;
 	/*For checking the condition in the main 
 	 * Testing Class using mock method*/
 	@BeforeEach
 	void setDemo()
 	{
-		cal=(Calculator.class);
+		cal=mock(Calculator.class);
 		when(cal.addition(1, 1)).thenReturn(2);
 		when(cal.subtraction(1, 1)).thenReturn(0);
 	}
@@ -23,5 +23,4 @@ class MockitoWithJunitDemo {
 		Assertions.assertEquals(0, cal.subtraction(1, 1));
 		verify(cal).subtraction(1, 1);
 	}
-
 }

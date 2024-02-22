@@ -1,33 +1,27 @@
 package com.edubridge.mockitodemo;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-class JunitMockitoDemo {
+import org.junit.jupiter.api.*;
+import org.mockito.Mockito;
+class MockitoWithJunitDemo {
+	/*Dependency Injection in the form of Objects*/
 	private Calculator cal;
-	
+	/*For checking the condition in the main 
+	 * Testing Class using mock method*/
 	@BeforeEach
-	void show()
+	void setDemo()
 	{
 		cal=mock(Calculator.class);
 		when(cal.addition(1, 1)).thenReturn(2);
 		when(cal.subtraction(1, 1)).thenReturn(0);
-
 	}
-
 	@Test
-	void testAddition() {
+	void testaddition() {
 		Assertions.assertEquals(2, cal.addition(1, 1));
 		verify(cal).addition(1, 1);
 	}
-
 	@Test
-	void testSubtraction() {
+	void testsubtraction() {
 		Assertions.assertEquals(0, cal.subtraction(1, 1));
-		verify(cal).addition(1, 1);
+		verify(cal).subtraction(1, 1);
 	}
+
 }

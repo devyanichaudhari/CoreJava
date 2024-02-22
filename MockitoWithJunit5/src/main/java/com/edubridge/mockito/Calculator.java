@@ -1,5 +1,4 @@
-package com.edubridge.mockitodemo;
-
+package com.edubridge.mockito;
 
 public class Calculator 
 {
