@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class NestedIfStaementDemo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		//age>=12,weight<=45 & >=110  jumping
+		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter Value of Age: ");
 		int age = s.nextInt();

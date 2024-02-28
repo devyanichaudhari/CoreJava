@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class IfElseStatementDemo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter Value of A: ");
 		int a = s.nextInt();

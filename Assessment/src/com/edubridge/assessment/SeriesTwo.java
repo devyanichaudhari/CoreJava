@@ -6,6 +6,7 @@ public class SeriesTwo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
 		int i=1;

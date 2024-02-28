@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class JaggedArray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		//Insert Array based on user Input
+		@SuppressWarnings("resource")
 		Scanner s =new Scanner(System.in);
 		System.out.println("Enter the Number of rows you wish to insert:");
 		int n=s.nextInt();

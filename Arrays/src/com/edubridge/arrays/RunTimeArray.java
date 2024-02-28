@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class RunTimeArray {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner s =new Scanner(System.in);
 		System.out.println("Enter the Number of records you wish to insert:");
 		int n=s.nextInt();

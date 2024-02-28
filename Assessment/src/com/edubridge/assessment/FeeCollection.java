@@ -6,6 +6,7 @@ public class FeeCollection {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		String studentType = s.next();
 		s.nextLine();
