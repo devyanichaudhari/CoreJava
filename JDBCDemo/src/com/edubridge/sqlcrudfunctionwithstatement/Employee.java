@@ -1,4 +1,4 @@
-package com.edubridge.sqlcrudfunction;
+package com.edubridge.sqlcrudfunctionwithstatement;
 
 import java.sql.*;
 
