@@ -3,7 +3,6 @@ package com.edubridge.designpattern.structural.facadedesignpattern;
 import java.util.Scanner;
 
 public class Executor {
-
 	public static void main(String[] args) {
 		System.out.println("Welcome to Registration Service ");
 		Scanner sc = new Scanner(System.in);
