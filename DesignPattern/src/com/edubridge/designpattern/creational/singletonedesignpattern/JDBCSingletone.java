@@ -67,7 +67,7 @@ public class JDBCSingletone {
 			rs = ps.executeQuery();
 			while(rs.next())
 			{
-				System.out.println("Id "+rs.getInt(1)+"\tName "+rs.getString(2)+"\tPassword"+rs.getString(3));
+				System.out.println("Id "+rs.getInt(1)+"\tName "+rs.getString(2)+"\tPassword "+rs.getString(3));
 			}
 		}
 		catch(Exception e)
@@ -87,7 +87,7 @@ public class JDBCSingletone {
 		}
 	}
 	@SuppressWarnings("static-access")
-	public int update(int id,String pass) throws SQLException
+	public int update(int id,String pass,String name) throws SQLException
 	{
 		Connection c=null;
 		PreparedStatement ps = null;
@@ -95,10 +95,11 @@ public class JDBCSingletone {
 		try
 		{
 			c = this.getConnection();
-			String query = "update employee set epass=? where empid=?";
+			String query = "update employee set euname=?,epass=? where empid=?";
 			ps = c.prepareStatement(query);
-			ps.setString(1, pass);
-			ps.setInt(2, id);
+			ps.setString(1, name);
+			ps.setString(2, pass);
+			ps.setInt(3, id);
 			recordCounter = ps.executeUpdate();
 		}
 		catch(Exception e)
@@ -127,6 +128,7 @@ public class JDBCSingletone {
 		{
 			c = this.getConnection();
 			ps = c.prepareStatement("delete from employee where empid = ?");
+			ps.setInt(1, userid);
 			recordCounter = ps.executeUpdate();
 		}
 		catch(Exception e)
