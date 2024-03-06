@@ -1,6 +1,7 @@
 package com.eb.dao;
 
 import java.sql.*;
+import java.util.*;
 
 import com.eb.database.CP;
 import com.eb.pojo.Product;
@@ -13,7 +14,7 @@ public class ProductDao
 		try
 		{
 			Connection conn = CP.createc();
-			String query = "insert into product(pname,price,pquantity) into(?,?,?)";
+			String query = "insert into product(pname,price,pquantity) values(?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setString(1, p.getProductName());
 			ps.setInt(2, p.getProductPrice());
@@ -46,18 +47,25 @@ public class ProductDao
 			e.printStackTrace();
 		}
 	}
-	public static boolean update(Product p) 
+	public static boolean update() 
 	{
 		try
 		{
+			boolean f = false;
 			Connection conn = CP.createc();
-			String sql1 = "update product set pname=?,price,pquantity where pid=?";
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the Product Id You want to Update:");
+			int id = sc.nextInt();
+			System.out.println("Enter the Product Name You want to Update:");
+			String  name  = sc.next();
+			System.out.println("Enter the Product Price You want to Update:");
+			int price = sc.nextInt();
+			System.out.println("Enter the Product Quantity You want to Update:");
+			int quantity = sc.nextInt();
+			String sql1 = "update product set pname='"+name+"',price='"+price+"', pquantity='"+quantity+"' where pid="+id;
 			PreparedStatement ps = conn.prepareStatement(sql1);
-			ps.setString(1, p.getProductName());
-			ps.setInt(2, p.getProductPrice());
-			ps.setInt(3, p.getProductQuantity());
-			ps.setInt(4, p.getProductId());
 			ps.executeUpdate();
+			f = true;
 		}
 		catch(Exception e)
 		{
@@ -72,6 +80,7 @@ public class ProductDao
 		Connection conn = CP.createc();
 		String sql2 = "delete from product where pid = ? ";
 		PreparedStatement ps = conn.prepareStatement(sql2);
+		ps.setInt(1, pid);
 		ps.executeUpdate();
 		}
 		catch(Exception e)
