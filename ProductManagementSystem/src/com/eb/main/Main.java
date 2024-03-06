@@ -36,10 +36,23 @@ public class Main {
 				System.out.println("Data Inserted Successfully");
 			break;
 			case 2:
-				System.out.println("");
-				System.out.println("Press 2 to View Employee Details.");
-				System.out.println("Press 3 to Update Employee Detail.");
-			
+				System.out.println("Enter which ID you want to Update");
+				int pid = sc.nextInt();
+				Product p2 = new Product();
+				ProductDao.update(p2);
+				System.out.println("Product Updated Successfully");
+			break;
+			case 3:
+				System.out.println("Enter which ID you want to Delete");
+				int id = sc.nextInt();
+				ProductDao.delete(id);
+				System.out.println("Product Deleted Successfully");
+			break;
+			case 4:
+				System.out.println("Bye Bye :)");
+			break;
+			default:
+				System.out.println("You have Entered Wrong Choice");
 			}
 		}
 		while(ch!=5);
