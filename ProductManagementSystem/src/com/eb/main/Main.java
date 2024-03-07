@@ -8,6 +8,7 @@ import com.eb.pojo.Product;
 public class Main {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Your Name:");
 		String name = sc.next();
