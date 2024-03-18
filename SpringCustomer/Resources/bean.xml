@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<bean id = "c1" class = "com.eb.model.Course">
+<constructor-arg value="101" type="int"></constructor-arg>
+<constructor-arg value="Java Full Stack"></constructor-arg>
+<constructor-arg value="2" ></constructor-arg>
+<constructor-arg value="3000" type="int"></constructor-arg>
+</bean>
+<bean id = "s1" class = "com.eb.model.Student">
+<constructor-arg value="1" type="int"></constructor-arg>
+<constructor-arg value="Devyani Chaudhari"></constructor-arg>
+<constructor-arg><ref bean="c1"></ref></constructor-arg>
+</bean>
+</beans> 
