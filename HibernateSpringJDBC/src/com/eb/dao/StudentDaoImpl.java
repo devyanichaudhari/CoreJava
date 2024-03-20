@@ -29,25 +29,24 @@ public class StudentDaoImpl implements StudentDao
 	@Transactional
 	public void delete(Student s) 
 	{
-		
+		hTemplate.delete(s);
 	}
 
 	@Override
+	@Transactional
 	public void update(Student s) {
-		// TODO Auto-generated method stub
+		hTemplate.update(s);
 		
 	}
-
 	@Override
+	@Transactional
 	public Student getStudent(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return hTemplate.get(Student.class,id);
 	}
-
 	@Override
+	@Transactional
 	public List<Student> getAllStudent() {
-		// TODO Auto-generated method stub
-		return null;
+		return hTemplate.loadAll(Student.class);
 	}
 
 }
