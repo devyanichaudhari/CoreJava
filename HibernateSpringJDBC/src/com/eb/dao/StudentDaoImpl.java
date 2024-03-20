@@ -1,26 +1,34 @@
 package com.eb.dao;
-
 import java.util.List;
-
 import com.eb.entity.Student;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.transaction.annotation.Transactional;
 
-public class StudentDaoImpl implements StudentDao{
 
-	@Override
-	public int insert(Student s) {
-		// TODO Auto-generated method stub
-		return 0;
+public class StudentDaoImpl implements StudentDao
+{
+	private HibernateTemplate hTemplate;
+	public void setHibernateTemplate(HibernateTemplate hTemplate)
+	{
+		this.hTemplate=hTemplate;
 	}
-
 	@Override
-	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+	@Transactional
+	public int insert(Student s) 
+	{
+		return (int) hTemplate.save(s);
 	}
-
 	@Override
-	public void delete(Student s) {
-		// TODO Auto-generated method stub
+	@Transactional
+	public void delete(int id) 
+	{
+		Student s = hTemplate.get(Student.class,id);
+		hTemplate.delete(s);
+	}
+	@Override
+	@Transactional
+	public void delete(Student s) 
+	{
 		
 	}
 
