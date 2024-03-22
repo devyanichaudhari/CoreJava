@@ -5,10 +5,13 @@ import org.aspectj.lang.annotation.*;
 @Aspect
 public class TrackSwiggyServices 
 {
-	@Pointcut("execution(*Swiggy.*(..))")
+	 @Pointcut("execution(* Swiggy.starterMenu(..))")  
 	public void vegMenu() {}
 	
-	@Before("vegMenu")
+	@Before("vegMenu()")
+	//@After("vegMenu()")
+	//@Around("vegMenu()")
+	//@AfterReturning("vegMenu()")
 	public void suggestion(JoinPoint p) 
 	{
 		System.out.println("This is an Additional Method");
