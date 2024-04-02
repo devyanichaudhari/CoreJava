@@ -8,5 +8,5 @@ import com.onetomany.model.Mobile;
 
 public interface MobileRepository extends JpaRepository<Mobile,Long>
 {
-	List<Mobile> findMobileByName();
+	List<Mobile> findByMobileName(String mName);
 }
