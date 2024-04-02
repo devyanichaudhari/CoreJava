@@ -12,6 +12,7 @@ import com.manytomany.repository.StudentRepository;
 @SpringBootApplication
 public class SpringBootManyToManyApplication {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SpringBootManyToManyApplication.class, args);
 		StudentRepository studentRepository = context.getBean(StudentRepository.class);
